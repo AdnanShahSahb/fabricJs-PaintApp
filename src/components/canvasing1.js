@@ -133,17 +133,17 @@ const Canvasing1 = () => {
 
   const uploadingSvg = () => {//http://fabricjs.com/assets/1.svg
     console.log(svgInputRef.current.value);
-    // if (svgInputRef.current.value.includes('https')) {
+    if (svgInputRef.current.value.includes('https')) {
       fabric.loadSVGFromURL(svgInputRef.current.value, function (objects, options) {
         svgData = fabric.util.groupSVGElements(objects, options);
         svgData.top = 30;
         svgData.left = 50;
         canvas.add(svgData);
       })
-    // }
-    // else {
-      // alert("the url must be secure http => https ")
-    // }
+    }
+    else {
+      alert("the url must be secure http => https ")
+    }
     // fabric.loadSVGFromString(svgData,)
   }
 
