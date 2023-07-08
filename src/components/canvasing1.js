@@ -133,18 +133,28 @@ const Canvasing1 = () => {
 
   const uploadingSvg = () => {//http://fabricjs.com/assets/1.svg
     console.log(svgInputRef.current.value);
-    if (svgInputRef.current.value.includes('https')) {
+    // if (svgInputRef.current.value.includes('https')) {
       fabric.loadSVGFromURL(svgInputRef.current.value, function (objects, options) {
         svgData = fabric.util.groupSVGElements(objects, options);
         svgData.top = 30;
         svgData.left = 50;
         canvas.add(svgData);
       })
-    }
-    else{
-      alert("the url must be secure http => https ")
-    }
+    // }
+    // else {
+      // alert("the url must be secure http => https ")
+    // }
     // fabric.loadSVGFromString(svgData,)
+  }
+
+  const generateSvg = () => {
+    // alert(canvas.toSVG());
+    // canvas.toSVG().select()
+
+    navigator.clipboard.writeText(canvas.toSVG()).then(() => {
+      alert('copied to clipboard')
+    })
+    // document.execCommand('copy')
   }
 
   var download = function () {
@@ -167,12 +177,15 @@ const Canvasing1 = () => {
       <div className='container'>
 
         <div className='canvas-container'>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center' }}>
             Name of your work
             <input type='text' ref={dwnldRef} required />
             transparent background?
             <input type='checkbox' ref={transparentRef} />
             <button onClick={download}>Download your work</button>
+            OR
+            <button onClick={generateSvg}>Generate Svg To Clipboard</button>
+
           </div>
           <canvas id="canvas" className='canvasing' />
         </div>
