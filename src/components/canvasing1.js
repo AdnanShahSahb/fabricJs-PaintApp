@@ -47,8 +47,10 @@ const Canvasing1 = () => {
   }
 
   const putDrawing = () => {
-
-
+    if (document.getElementById('addingPencil').innerHTML == "pencil")
+      document.getElementById('addingPencil').innerHTML = "click to turn off"
+    else
+      document.getElementById('addingPencil').innerHTML = "pencil"
 
     if (canvas.isDrawingMode === true)
       canvas.isDrawingMode = false
