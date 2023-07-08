@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: gray; */
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.canvas-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+@media screen and (max-width: 690px) {
+    .canvas-container {
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 0px;
+
+        /* background-color: blue; */
+    }
+
+}
+
+.canvasing {
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* background-color: #ffffff; */
+
+    width: var(--canvas-width);
+}
+
+.button-container {
+    /* border: solid; */
+    width: 100%;
+    margin-top: 100px;
+
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.groups {
+    /* background-color: red; */
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    border-radius: 10;
+}
+
+
+
+@media screen and (max-width: 690px) {
+    .h1s {
+        position: static;
+        /* background-color: blue; */
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .button-container {
+        flex-direction: column;
+        /* background-color: blue; */
+    }
+}
+
+.pencil-selected button {
+    background-color: gray;
+    /* color:in */
+}
