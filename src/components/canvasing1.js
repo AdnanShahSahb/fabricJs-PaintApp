@@ -133,14 +133,17 @@ const Canvasing1 = () => {
 
   const uploadingSvg = () => {//http://fabricjs.com/assets/1.svg
     console.log(svgInputRef.current.value);
-    fabric.loadSVGFromURL(svgInputRef.current.value, function (objects, options) {
-      svgData = fabric.util.groupSVGElements(objects, options);
-      svgData.top = 30;
-      svgData.left = 50;
-      canvas.add(svgData);
-
-    });
-
+    if (svgInputRef.current.value.includes('https')) {
+      fabric.loadSVGFromURL(svgInputRef.current.value, function (objects, options) {
+        svgData = fabric.util.groupSVGElements(objects, options);
+        svgData.top = 30;
+        svgData.left = 50;
+        canvas.add(svgData);
+      })
+    }
+    else{
+      alert("the url must be secure http => https ")
+    }
     // fabric.loadSVGFromString(svgData,)
   }
 
@@ -203,11 +206,11 @@ const Canvasing1 = () => {
           </div>
           <div className='groups'>
             <h3>Svgs</h3>
-            <input type='text' id='svging' ref={svgInputRef} />
+            URL: <input type='text' id='svging' ref={svgInputRef} />
             <br />
             <button onClick={uploadingSvg}>Upload</button>
             <br />
-            <i style={{fontSize:'10px'}}>example: http://fabricjs.com/assets/2.svg</i>
+            <i style={{ fontSize: '10px' }}>example: http://fabricjs.com/assets/2.svg</i>
           </div>
         </div>
 
