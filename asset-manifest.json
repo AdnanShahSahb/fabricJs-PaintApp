@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fabricJs-PaintApp/static/css/main.f9778770.css",
+    "main.js": "/fabricJs-PaintApp/static/js/main.341edb3f.js",
+    "index.html": "/fabricJs-PaintApp/index.html",
+    "main.f9778770.css.map": "/fabricJs-PaintApp/static/css/main.f9778770.css.map",
+    "main.341edb3f.js.map": "/fabricJs-PaintApp/static/js/main.341edb3f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9778770.css",
+    "static/js/main.341edb3f.js"
+  ]
+}
